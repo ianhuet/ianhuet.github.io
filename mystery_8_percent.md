@@ -7,10 +7,8 @@ excerpt: "Beware the gap between code & test coverage"
 # The Mystery 8%
 Beware the gap between code & test coverage
 
-## TL;DR
-A [test coverage threshold](https://jestjs.io/docs/configuration#coveragethreshold-object) can be a useful tool to drive improved test coverage. Yet it is only part of the process, it is important to be vigilant for large increases as code coverage reports are calculated on the amount of code executed, not on the amount of code tested.
-
-Sudden jumps in code coverage are an indicator of poor practice. Unchecked this is counter productive.
+### TLDR
+> A [test coverage threshold](https://jestjs.io/docs/configuration#coveragethreshold-object) can be a useful tool to drive improved test coverage. Yet it is only part of the process, it is important to be vigilant for large increases as code coverage reports are calculated on the amount of code executed, not on the amount of code tested. Sudden jumps in code coverage are an indicator of poor practice. Unchecked this is counter productive.
 
 ---
 
