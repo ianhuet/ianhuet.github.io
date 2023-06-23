@@ -6,6 +6,8 @@ Principal Engineer specialised in web based UI development. Customer focused & q
 
 ### 2023
 
+[Global vs. Server state](https://journal.huet.info/global_vs_server_state) - is there a viable alternative to the maintaining global state client-side for read-only server data?
+
 [To PR or not to PR](https://journal.huet.info/to_pr_or_not_to_pr) - is that the most meaningful question?
 
 [The Mystery 8%](https://journal.huet.info/mystery_8_percent) - code coverage vs. test coverage
