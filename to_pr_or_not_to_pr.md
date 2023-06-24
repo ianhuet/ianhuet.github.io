@@ -47,4 +47,4 @@ https://www.simplilearn.com/pull-vs-merge-request-definition-differences-benefit
 
 ---
 
-[^1]: Pull Rquest (PR): A notification given by developers when they're done building a feature. 
+[^1]: Pull Request (PR): A notification given by developers when they are done building a feature. 
