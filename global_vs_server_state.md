@@ -8,17 +8,17 @@ excerpt: "Must there be global state for everything?"
 Can the creation & maintainence of global state be automated away without loosing capabilities?
 
 ### TL;DR
-> Is there a simple, automated alternative to building global state on the client-side for handling read-only server data? I creating a simple application in both Vue3 & React to investigated this. Using Apollo Client to connect with the same GraphQL API in both apps, the ability to do fine-grain cache querying in React presents a significant advantage. For now Vue@3 still requires a client-side global store to achieve the same functionality. Vue@2 is stuck in a by-gone era and will never enable this.
+> Is there a simple, automated alternative to building global state on the client-side for handling read-only server data? I created a simple application in both Vue3 & React to investigated this. Using Apollo Client to connect with the same GraphQL API in both apps, the ability to do fine-grain cache querying in React presents a significant advantage. For now Vue@3 still requires a client-side global store to achieve the same functionality.
 
 ---
 
-A client's project is built with Vue@2, Vuex, Apollo Client & GraphQL. Coming from a React background, I thought this stack would have enabled the automated handling of server state. During a recent discussion I queried why Apollo Client caching was being used in this way, instead of using Vuex to store all server data. The response was that it was not possible. To sense check my thoughts around this I created a simple application in both Vue3 & React to compare capabilities.
+A client's project is built with Vue@2, Vuex, Apollo Client & GraphQL. Coming from a React background, I thought this stack would enable the automated handling of server state. During a recent discussion I queried why Apollo Client caching was being used in this way, instead of using Vuex to store all server data. The response was that it was not possible. To sense check my thoughts around this I created a simple application in both Vue3 & React to compare capabilities.
 
 **Technical Context:**
 
 The client/server architecture of SPAs[^1] neccessitates all server data be transmitted to the client. Tools like Vuex or Redux are then used to cache this data as global state, to reduce the latency penalty this pattern incures. This has several benefits: after the client buffer is primed it creates a perceived UI performance improvement, it removes the need for prop drilling, data can be accessed rather than copied, as well as acting as a communciation bus - potentially connecting separate aspects of an app.
 
-Global state is generic name for this client-side data store. The bucket that both a clients app state and all that server persisted data are dropped into. While the mentioned benefits are handy this approach also adds complexity, and an on-going maintenance overhead. Further more it handles these different data types, with their different characteristics, in the same way. This is extra work for a suboptimal solution.
+Global state is the generic name for this client-side data store. The bucket that both a clients app state and all that server persisted data are dropped into. While the mentioned benefits are handy this approach also adds complexity, and an on-going maintenance overhead. Further more it handles these different data types, with their different characteristics, in the same way. This is extra work for a suboptimal solution.
 
 Can this client data and server data be broken up for a better outcome achieved with less work?
 
@@ -104,6 +104,7 @@ Time now to see how many of this enhancements can be ported to the Vue app...
 - Apollo Client offers the ability to augment this data store with local fields, and per field data decorators.
 - In React, Apollo Client further enables fine-grain querying of that data cache.
 - The `@vue/apollo-composable` wrapper package enables the simplified request handling and request deduping. However, the fine-grained cache querying is not yet available. There is no indication if or when that might become available. Back to Vuex/Pinia for now...
+- Vue@2 is stuck in a by-gone era and will never enable this.
 
 ### Reference:
 
