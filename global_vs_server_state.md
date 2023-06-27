@@ -25,8 +25,8 @@ Can this client data and server data be broken up for a better outcome achieved 
 ### Application Outline
 
 1. Use the same, existing GraphQL API - [star-wars-swapi@current](https://studio.apollographql.com/public/star-wars-swapi/variant/current/home).
-2. Use an App router to enable both a List & Detail view of the available data.
-3. Using Apollo Client, how much can be achieved without relying on server state in React & Vue?
+2. Use a router to enable both a List & Detail view of the available data.
+3. Using Apollo Client, how much can be achieved in React & Vue@3 without using global state?
 
 ## Iterations
 
@@ -55,7 +55,7 @@ const production = client.readFragment({
 });
 ```
 
-2. Review the GraphQL codegen configuration as manually applying the generated types is tedious. In place of `graphql-tag` it turns out [the codegen process generates its' own template literal tag](https://the-guild.dev/graphql/codegen/docs/guides/react-vue#writing-graphql-queries) for parsing GraphQL queries. Switching this over achieves the same functionality while also automatic applying the types generated from the queries to the responses.
+2. Review the GraphQL codegen configuration as manually applying the generated types is tedious. In place of `graphql-tag` [the codegen process generates its' own template literal tag](https://the-guild.dev/graphql/codegen/docs/guides/react-vue#writing-graphql-queries) for parsing GraphQL queries. Switching this over achieves the same functionality while also automatic applying the types generated from the queries to the responses.
 ```typescript
 import { gql } from '../generated/gql';
 ```
