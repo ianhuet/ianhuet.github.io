@@ -6,6 +6,8 @@ Principal Engineer specialised in web based UI development. Customer focused & q
 
 ### 2023
 
+[Blindspots](https://journal.huet.info/20230701_Blindspots)
+
 [Global vs. Server state](https://journal.huet.info/global_vs_server_state) - must there be global state for everything?
 
 [To PR or not to PR](https://journal.huet.info/to_pr_or_not_to_pr) - is that the most meaningful question?
