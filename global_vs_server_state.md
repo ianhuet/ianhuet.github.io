@@ -5,14 +5,14 @@ excerpt: "Must there be global state for everything?"
 ---
 
 # Global vs. Server State
-Can the creation & maintainence of global state be automated away without loosing capabilities?
+Within a client-side app, can the creation & maintainence of global state be automated away without loosing capabilities?
 
 ### TL;DR
-> Is there a simple, automated alternative to building global state on the client-side for handling read-only server data? I created a simple application in both Vue3 & React to investigated this. Using Apollo Client to connect with the same GraphQL API in both apps, the ability to do fine-grain cache querying in React presents a significant advantage. For now Vue@3 still requires a client-side global store to achieve the same functionality.
+> Is there a easy-to-use, automated way to handle read-only server data on the client-side without building global state? I created a simple application in both Vue3 & React to investigated this. Using Apollo Client to connect with the same GraphQL API in both apps, the ability to do fine-grain cache querying in React presents a significant advantage. For now Vue@3 still requires a client-side global store to achieve the same functionality.
 
 ---
 
-A client's project is built with Vue@2, Vuex, Apollo Client & GraphQL. Coming from a React background, I thought this stack would enable the automated handling of server state. During a recent discussion I queried why Apollo Client caching was being used in this way, instead of using Vuex to store all server data. The response was that it was not possible. To sense check my thoughts around this I created a simple application in both Vue3 & React to compare capabilities.
+A client's project is built with Vue@2, Vuex, Apollo Client & GraphQL. Coming from a React background, I thought this stack would enable the automated handling of server state. During a recent discussion I queried why Apollo Client caching was not being used in this way, instead of using Vuex to store all server data. The response was that it was not possible. To sense check my thoughts around this I created a simple application in both Vue3 & React to compare capabilities.
 
 **Technical Context:**
 
