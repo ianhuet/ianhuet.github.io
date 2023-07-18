@@ -8,7 +8,7 @@ excerpt: "as digital systems increasingly replace human interaction the duty of 
 As digital systems increasingly replace human interaction the duty of care required of system developers must increase also.
 
 #### TL;DR
-> Computerised self-service systems are increasingly replacing human interaction. Though this enables businesses to scale it also increases the likelihood of introducing blind spots into those systems. Without taking a systematic approach to managing this customers will suffer, especially non-typical customers. 
+> Computerised self-service systems are increasingly replacing human interaction. Though this enables businesses to scale it also increases the likelihood of introducing blind spots into those systems. Without taking a systematic approach to managing this customers will suffer, especially those who find themselves off the happy path. 
 
 ---
 
@@ -38,7 +38,7 @@ These integrations can often be the gap that users fall into. [Building the enti
 
 In systems built to send rockets into space or to enable autonomous cars ignoring these scenarios are not acceptable. Yet so many other widely available systems are not built to this standard. With the increasing impact this has on peoples lives it is high time to shift our duty of care, both for the sake of our customers and to mitigate the potential reputational impact of not doing it.
 
-Of course, covering every eventuality is not easy, and not cheap. While travelling state side, the problems I encountered were inconvenient but not critical. Yet they were also a great reminder of the impact software development has on real people. For teams building these systems periodoic discussion is the easiest, best place to start - a regular touch point to reinforce who these systems are being built for. Time to consider who you do and do not serve, then be up-front about it. 
+Of course, covering every eventuality is not easy, and not cheap. While travelling state side, the problems I encountered were inconvenient but not critical. Yet they were also a great reminder of the impact software development has on real people. For teams building these systems periodoic discussion is the easiest, best place to start - a regular touch point to reinforce who these systems are being built for. Time to consider who you do and do not serve. Then be up-front about it.
 
 As [Conways law](https://martinfowler.com/bliki/ConwaysLaw.html) states, an organisation that builds a system typically builds that system in reflection of itself. What type of organisation are you working in: Is there anything you can do to influence that organisation to be more inclusive? Or to at least sign post who it serves so everyone else can save their energy for finding an alternate solution.
 
@@ -64,12 +64,12 @@ As [Conways law](https://martinfowler.com/bliki/ConwaysLaw.html) states, an orga
 
 ---
 
-[^1]: Three customers face [steep roaming charges](https://www.three.ie/roaming/rates/) including €2+ per minute to either make or receive calls, and €5 per MB for data. To compound this [Three has a reputation for badly overcharging roaming customers](https://www.thejournal.ie/three-ireland-plead-guilty-to-data-roaming-debacle-5967600-Jan2023/). Concerned about this I went into a Three store to get their advice. The response "keep your phone in airplane mode until back in Europe!".
+[^1]: Three customers face [steep roaming charges](https://www.three.ie/roaming/rates/) including €2+ per minute to either make or receive calls, and €5 per MB for data. To compound this [Three has a reputation for badly overcharging roaming customers](https://www.thejournal.ie/three-ireland-plead-guilty-to-data-roaming-debacle-5967600-Jan2023/). Concerned about this I went into a Three store to get their advice. The response "keep your phone turned off or in airplane mode until you'reback in Europe!".
 
 [^2]: When our luggage didn't arrive there was no easy way for us to contact the baggage service, short of going back out to the airport. Also there was no way for their third-party, app enabled delivery service to let us know when our bags were on the way. Leaving us stuck in a stay or go conundrum.
 
 [^3]: When out for a dinner I couldn't order because the menu was only available through a QR code. Our server loaned us her phone.
 
-[ˆ4]: While staying in an AirBnb I couldn't communicate with the host as I couldn't log into my account. It is authenticated via Facebook and their 2 factor authentication requires a code via SMS.
+[^4]: While staying in an AirBnb I couldn't communicate with the host as I couldn't log into my account. It is authenticated via Facebook and their 2 factor authentication requires a code via SMS.
 
 [^5]: Even when on wifi I couldn't setup Skype to make phone calls, the Microsoft authentication emails required to setup the account never arrived before they had already expired.

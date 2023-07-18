@@ -6,7 +6,7 @@ Principal Engineer specialised in web based UI development. Passionate about del
 
 ### 2023
 
-[Blind Spots](https://journal.huet.info/20230719_blind_spots) - as digital systems increasingly replace human interaction the duty of care required of system developers must increase also.
+[Blind Spots](https://journal.huet.info/20230719_blind_spots) - thoughts on a system developers duty of care
 
 [Global vs. Server state](https://journal.huet.info/global_vs_server_state) - must there be global state for everything?
 
