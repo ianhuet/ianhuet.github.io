@@ -5,39 +5,40 @@ excerpt: "exploring configuration, integration and DevEx options with React, MUI
 ---
 
 # Get Emotional
-exploring configuration, integration and DevEx options with React, Material UI, Emotion Css & Stylelint
+Exploring configuration, integration and DevEx options with React, Material UI, Emotion Css & Stylelint
 
 #### TL;DR
-> Emotion CSS sits at the heart of [MUI.v5](https://mui.com/) component library. I have previously used the MUI.v4 JSS implementation to deliver an easily adopted, highly consistent UI. This is an experiment to see if Emotion CSS can also deliver maintainable styles and an effective development experience?
+> I have previously used the Material UI.v4 JSS implementation to deliver highly consistent, easily implemented, and easily maintained UI. Emotion CSS sits at the heart of [MUI.v5](https://mui.com/). This is an experiment to see if Emotion CSS can also deliver maintainable styles and an effective development experience? The result is that it is effective, though problematic on automated style linting.
 
 ---
 
-I first started working with CSS at version 2.3 back when web developers were clamouring for a better way to layout pages than using HTML tables. Since then I have worked at scale with nearly all CSS implementations. Coming from a classic CSS background I initially resisted the Javascript implementations. Working with Material UI won me over. Now several successfully delivered projects later I appreciate the benefits it offers. Especially for delivering consistent UI in complex web application development. Though it is not a perfect tool, there are costs that need to be cafefully monitored.
+I first started working with CSS at version 2.3 back when web developers were clamouring for a better way to layout pages than using HTML tables. Since then I have worked at scale with nearly all CSS implementations. Coming from a classic CSS background I initially resisted the Javascript implementations. Working with Material UI won me over. Now several successfully delivered projects later I appreciate the benefits it offers. Especially for delivering consistent UI in complex web application development. Though it is not a perfect tool, it's run time nature needs to be carefully monitored for potential performance impacts.
 
 ## An experiment with React, Material UI, Emotion CSS & Stylelint
 
-Note:
+**Note:**
+
 - As Material UI (MUI v.5) uses Emotion CSS under the hood it will be used as the theming engine.
 - All the code included below is from [this GitHub repository](https://github.com/ianhuet/react-vite-mui-emotion-stylelint).
 
-### Steps Followed
+**Steps Followed**
 
-1. Create a new Vite based React project
-2. Add Stylelint to lint CSS styles
-3. Add Emotion CSS, and enable the `css` prop
-4. Migrate the default `App.css` to Emotion CSS
-5. Evolve the Stylelint configuration to work with Emotion CSS
-6. Extract Emotion styles out of the component closure
-7. Integrate MUI theming into the Emotion styling
-8. Create a utility to simplify style implementation
+1. [Create a new Vite based React project](#create-project)
+2. [Add Stylelint to lint CSS styles](#add-stylelint)
+3. [Add Emotion CSS, and enable the `css` prop](#add-emotion-css)
+4. [Migrate the default `App.css` to Emotion CSS](#migrate-css-to-emotion)
+5. [Evolve the Stylelint configuration to work with Emotion CSS](#stylelint-emotion-config)
+6. [Extract Emotion styles out of the component closure](#extract-emotion)
+7. [Integrate MUI theming into the Emotion styling](#emotion-theming)
+8. [Create a utility to simplify style implementation](#style-utility)
 
-### 1. Create a new Vite based React project
+### 1. Create a new Vite based React project {#create-project}
 Run this command, give the project a name, then select 'React' & 'Typescript'.
 ```
 npm create vite@latest
 ```
 
-### 2. Add Stylelint to lint CSS styles
+### 2. Add Stylelint to lint CSS styles {#add-stylelint}
 Install these packages, then add the following script and configuration to integrate Stylelint into the development toolchain.
 ```
 npm i -D stylelint stylelint-config-standard stylelint-order
@@ -62,13 +63,13 @@ This configuration adds several useful elements to the Stylelint setup. `styleli
 ```
 Add this to the `scripts` section to enable style linting, and automated fixing where possible.
 
-### 3. Add Emotion CSS, and enable the `css` prop
+### 3. Add Emotion CSS, and enable the `css` prop {#add-emotion-css}
 With the base application established and Stylelint integrate next up is the migration of the classic CSS styles to Emotion CSS.
 ```
 npm i @emotion/react
 ```
 
-In order to play nice with the Typescript compiler this must be added to 'tsconfig.ts', as well as being added to the 'vite.config.ts' React plugin config: `"jsxImportSource": "@emotion/react"`. The next step is to choose between the [JSX Pgrama](https://emotion.sh/docs/css-prop#jsx-pragma) integration or the Babel plugin enabled [css prop](https://emotion.sh/docs/css-prop). After looking into these options I opted for the `css prop` option as I found the need to add the below code at the top of every component undesirable.
+In order to play nice with the Typescript compiler this must be added to `tsconfig.ts`, as well as being added to the 'vite.config.ts' React plugin config: `"jsxImportSource": "@emotion/react"`. The next step is to choose between the [JSX Pgrama](https://emotion.sh/docs/css-prop#jsx-pragma) integration or the Babel plugin enabled [css prop](https://emotion.sh/docs/css-prop). After looking into these options I opted for the `css prop` option as I found the need to add the below code at the top of every component undesirable.
 ```
 /** @jsx jsx */
 import { jsx } from '@emotion/react'
@@ -81,7 +82,8 @@ babel: {
 },
 ```
 
-With these in place Emotion `css` can now be integrated into the JSX either inline or as a serialised styles object. The serialised styles object option requires the `css` function to convert object notation to the data structure compatible with the JSX css prop.
+### 4. Migrate the default `App.css` to Emotion CSS {#migrate-css-to-emotion}
+With these in place Emotion Css can now be integrated into the JSX either inline or as a serialised styles object. The serialised styles object option requires the `css` function to convert object notation to the data structure compatible with the JSX css prop.
 ```
 import { css } from '@emotion/react'
 
@@ -100,7 +102,7 @@ const readTheDocs = css`
 </p>
 ```
 
-### 5. Evolve the Stylelint configuration to work with Emotion CSS
+### 5. Evolve the Stylelint configuration to work with Emotion CSS {#stylelint-emotion-config}
 The Stylelint configuration needs to be expanded to include cover for the CSS-in-JS implementation introduced by Emotion. The first step is to update the `lint:style` script within the package.json to include the components: `lint:style": "stylelint '**/*.{css,tsx}' --fix`. Next the stylelint configuration also needs to be updated.
 
 `.stylelintrc.yml`
@@ -111,7 +113,7 @@ The Stylelint configuration needs to be expanded to include cover for the CSS-in
 ```
 This establishes an override for the Typescript component implementations, catered for by the [postcss-styled-syntax](https://www.npmjs.com/package/postcss-styled-syntax) custom syntax. Running the linting now surfaces any issues within our Emotion CSS.
 
-### 6. Extract Emotion styles out of the component closure
+### 6. Extract Emotion styles out of the component closure {#extract-emotion}
 While functional there are a few issues with this first approach. For starters, I am not a fan of inline styles. They both clutter up the JSX markup and add potentially prodlematic specificity to the styling. Beyond this there is [a more pronounced issue, performance](https://dev.to/srmagura/why-were-breaking-up-wiht-css-in-js-4g9b). Having the styles declared inside the component scope results in them being recreated on every rerender.
 
 All of these concerns can be mitigated by extracting the styles outside the component as shown below. This tidies up the JSX without impacting any of the styling functionality. It removes the performance impact incurred by the styles being reproduced on each render cycle. And it is still covered by stylelint.
@@ -138,7 +140,7 @@ export function App() {
   </p>
 ```
 
-### 7. Integrate MUI theming into the Emotion styling
+### 7. Integrate MUI theming into the Emotion styling {#emotion-theming}
 Establishing, and consistently using, a centralised theme is a core element of building high quality UI. So enabling this with Emotion is a essential requirement. Thankfully adjusting the extracted styles just a little makes integrating with a Material UI defined theme easy. This approach is also very easily adapted to any other theme implementation.
 
 ```
@@ -186,7 +188,7 @@ export function App() {
 
 While this functions exactly as intended, this is where Stylelint started to present challenges. The super useful `declaration-property-value-no-unknown` rule does not verify dynamically assigned property values. Or at least I was not yet able to find a configuration that enables this, which is a little disappointing. Emotion Css does have its own [theming capability](https://emotion.sh/docs/theming), despite having experiemented with this in isolation and as a pass through of the Material UI theme any approach I took still failed to register in the linting report yet.
 
-### 8. Create a utility to simplify style implementation
+### 8. Create a utility to simplify style implementation {#style-utility}
 Undettered I pressed on with a further evolution of the extracted styles. As well as using literal templates, Emotion CSS enables the declaration of styles camelCase object notation. My previous experience with JSS drew me towards this option. While exploring this it occurred to me to try creating a small utility function to simplify the creation of styles another step. This function automatically completes the Emotion `css` serialisation, removing the need to enclose each style object individually.
 
 `utils.ts`
@@ -220,9 +222,9 @@ const makeObjectStyles = (theme: Theme): SerialisedStylesObject => {
 ```
 
 ## Final Thoughts
-I'm pleased with the development experience that has been achieved. However, the lack of automated linting over the themed properties and the most streamlined DevEx would be a deal breaker if considering this for a large production project.
+I'm pleased with the development experience that has been achieved. However, the lack of automated linting over the themed properties and the [most streamlined DevEx](#style-utility) would be a major concern if considering this for a large production project.
 
-In a broader context, this experiment has served as a reminder of how precarious and "magical" much of this toolchain is. Don't get me wrong, I am greatly appreciative of the community that has built these tools and made them freely available. Rather this is a reflection on how much more I have to learn. With a better understanding of these tools and how they integrate I would hope to be better able to identify where the gaps are and how to address them.  With that I would then be delighted with this approach to creating and maintaining web application styles.
+In a broader context, this experiment has served as a reminder of how precarious and "magical" much of the web toolchain is. Don't get me wrong, I am greatly appreciative of the community that has built these tools and made them freely available. Rather this is a reflection on how much more I have to learn. With a better understanding of these tools and how they integrate I would hope to be better able to identify where the gaps are and how to address them.  With that I would then be delighted with this approach to creating and maintaining web application styles.
 
 Not wanting to stray any further outside the time box I set for this experiement I must draw a line under this for now. I will be going back to that same community though. Hopefully some good soul can give me a steer on where I am going wrong. Or verify if what I am looking for is actually possible? Or if I should be approaching this in an entirely different way?!
 
@@ -230,13 +232,13 @@ Not wanting to stray any further outside the time box I set for this experiement
 
 - Emotion CSS is feature rich, and serves a broad range of user configurations
 
-- Stylelint v.15 brought some [notable changes](https://stylelint.io/migration-guide/to-15/#significant-changes)
+- Stylelint v.15 brought some [notable changes](https://stylelint.io/migration-guide/to-15/#significant-changes), along with [breaking changes](https://stylelint.io/migration-guide/to-15#breaking-changes)
 
 - [postcss-styled-syntax](https://www.npmjs.com/package/postcss-styled-syntax) steps up to replace the deprecated [@stylelint/postcss-css-in-js](https://github.com/stylelint/postcss-css-in-js)
 
-- Tooling is never a finished task, it requires constant investment to ensure benefits don't become drag
+- For web application development I think the CSS-in-JS option is still a viable one if the linting issues can be resolved
 
-- For web application development I still prefer the CSS-in-JS approach over other options
+- Tooling is never a finished task, it requires periodic review and investment to ensure work aides don't become drags
 
 
 ### References:
