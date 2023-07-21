@@ -6,7 +6,7 @@ Principal Engineer specialised in web based UI development. Passionate about del
 
 ### 2023
 
-[Get Emotional Css](https://journal.huet.info/20230721_get_emotional) exploring configuration, integration and DevEx potential
+[Get Emotional](https://journal.huet.info/20230721_get_emotional) exploring Emotion CSS configuration, integration and DevEx potential
 
 [Blind Spots](https://journal.huet.info/20230719_blind_spots) - thoughts on a system developers duty of care
 
