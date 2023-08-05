@@ -14,7 +14,7 @@ As digital systems increasingly replace human interaction the duty of care requi
 
 Earlier this year I visited Arizona on holiday. It was a wonderful opportunity to catch up with far away family and to experience an entirely new part of the world. While it was a great trip it also presented some unexpected obstacles. Reflecting on these has been a welcome reminder to consider the broader, potential impact of system development decisions.
 
-To complete booking the flights involved speaking to customer support on 3 separate occasions due to obstacles presented online. When I got state side, not having normal mobile phone access[^1] caused all sorts of challenges: recovering our lost luggage[^2], ordering food in a restaurant[^3], communicating with our AirBnb host[^4], trying to use Skype to make calls[^5]. Integrated, computerised business systems were the common thread through all of these challenges.
+To complete booking the flights involved speaking to customer support on 3 separate occasions due to obstacles presented online. When I got state side, not having normal mobile phone access[^1] caused all sorts of challenges: recovering lost luggage[^2], ordering food in a restaurant[^3], communicating with the AirBnb host[^4], trying to use Skype to make calls[^5]. Integrated, computerised business systems were the common thread through all of these challenges.
 
 
 ### What is a business system?
@@ -30,7 +30,7 @@ In stark contrast to the impression left by all those dead-end experiences was t
 
 ### Who does the happy path serve?
 
-Seeing the Waymo taxis I wanted to book a ride but I was thwarted. To hail it a Waymo an iOS/Android app is required but I found it was region blocked. While disappointing I could easily understand this intentional restriction. It is an ambitious system currently in a very limited trial phase. But what about all those businesses with much less ambitious systems that are already generally available and broadly advertised?
+Seeing the Waymo taxis I wanted to book a ride but I was thwarted. To hail a Waymo an iOS/Android app is required but I found it was region blocked. While disappointing, I could easily understand this intentional restriction. It is an ambitious system currently in a very limited trial phase. But what about all those businesses with much less ambitious systems that are already generally available and broadly advertised?
 
 Subsequently I discovered that the problems with booking the flights was primarily due to our journey having 2 legs, involving different carriers. The integration between these carriers systems had many unmarked dead-ends, and I happened to fall into lots of them. It was frustrating but during the time I was travelling [it could have been much worse](https://edition.cnn.com/2022/12/27/business/southwest-airlines-service-meltdown/index.html).
 
@@ -38,7 +38,7 @@ These integrations can often be the gap that users fall into. [Building the enti
 
 In systems built to send rockets into space or to enable autonomous cars ignoring these scenarios are not acceptable. Yet so many other widely available systems are not built to this standard. With the increasing impact this has on peoples lives it is high time to shift our duty of care, both for the sake of our customers and to mitigate the potential reputational impact of not doing it.
 
-Of course, covering every eventuality is not easy, and not cheap. While travelling state side, the problems I encountered were inconvenient but not critical. Yet they were also a great reminder of the impact software development has on real people. For teams building these systems periodoic discussion is the easiest, best place to start - a regular touch point to reinforce who these systems are being built for. Time to consider who you do and do not serve. Then be up-front about it.
+Of course, covering every eventuality is not easy, and not cheap. While travelling state side, the problems I encountered were inconvenient but not critical. Yet they were also a great reminder of the impact software development has on real people's lives. For teams building these systems periodoic discussion is the easiest, best place to start If you want to do something about this. Establish a regular touch point to reinforce who your systems are being built for. A time to consider who you do and do not serve. I would also suggest taking a moment to look at who your users actually are, and digest this reality check.
 
 As [Conways law](https://martinfowler.com/bliki/ConwaysLaw.html) states, an organisation that builds a system typically builds that system in reflection of itself. What type of organisation are you working in: Is there anything you can do to influence that organisation to be more inclusive? Or to at least sign post who it serves so everyone else can save their energy for finding an alternate solution.
 
