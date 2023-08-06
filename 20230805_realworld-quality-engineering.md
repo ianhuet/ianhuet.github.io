@@ -17,7 +17,7 @@ excerpt: "an exercise in strategic quality engineering"
 
 Pick the product to work with, establish local & deployed environments, and establish an appropriate test strategy.
 
-1. [Identify a fully integrated project to work with](20230805_realworld-quality-engineering_p1-1.md) :white_check_mark:
+1. [Identify a fully integrated project to work with](20230805_realworld-quality-engineering_p1-1.md) ✅
 2. Setup Standardised Development Environment - WIP
 3. Setup a deployment pipeline w/ hooks/config for automated tests
 4. Outline an appropriate test strategy
