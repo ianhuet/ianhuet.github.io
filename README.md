@@ -6,7 +6,7 @@ Principal Engineer specialised in web based UI development. Passionate about del
 
 ### 2023
 
-[RealWorld Quality Engineering](https://journal.huet.info/20230805_realworld-quality-engineering) - an exercise in strategic quality engineering (WIP: 1/8)
+[RealWorld Quality Engineering](https://journal.huet.info/20230805_realworld-quality-engineering) - an exercise in quality engineering (WIP: 2/8)
 
 [Get Emotional](https://journal.huet.info/20230721_get-emotional) - exploring Emotion CSS configuration, integration and DevEx potential
 
